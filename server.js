@@ -32,32 +32,38 @@ function MyCSV(Fcol,Scol,tcol,fcol,ficol,scol,secol,ecol,ncol){
   this.Mid=ncol;
   
 }
-var MyData=[];
+
 //var MyData={"Name":"dipika"};
 app.get('/currency_data', function(req, res) {
+  var MyData=[];
   console.log("REquest ali");
  // Let request return the document pointed to by the URL
     // as a readable stream, and pass it to csv.fromStream(
 request(URL, function (error, response, body) {
   if (!error && response.statusCode == 200) {
 var temp=response.body;
+console.log(temp);
 var inde=temp.split("\n");
 //console.log(inde.length);
 
+//MyData.push(inde);
 
 for(var index=0;index<inde.length;index++){
 //console.log(inde[index]);
 var temp1=inde[index].split(",");
 if(temp1[1]!=undefined){
-MyData.push(new MyCSV(temp1[0],temp1[1]));
+MyData.push({"Symbols":temp1[0],"Timestamp_msec":temp1[1]});
+//console.log(MyData);
 }
 }
 
 //console.log(inde[10]
   //MyData.push(new MyCSV())
- // console.log(MyData);
+  //console.log(MyData[0]);
  var myJSON = JSON.stringify(MyData);
- // console.log(myJSON);
+ //console.log(myJSON[0]);
+  myJSON=JSON.parse(myJSON);
+  console.log(myJSON);
   res.json(myJSON);
 
   }
