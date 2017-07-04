@@ -1,10 +1,24 @@
 var csv = require( "fast-csv" );
 
+
 // Require the 'request' module.
 // Install it with `npm install --save request`.
 var request = require('request');
+var express = require('express');
+var app = express();
+app.set('port', (process.env.PORT || 3001));
 
 var URL = "http://webrates.truefx.com/rates/connect.html?f=csv";
+
+app.use(function(req, res, next) {
+    // Set permissive CORS header - this allows this server to be used only as
+    // an API server in conjunction with something like webpack-dev-server.
+    res.setHeader('Access-Control-Allow-Origin', '*');
+     res.setHeader('Access-Control-Allow-Headers' ,'Origin, X-Requested-With, Content-Type, Accept' );
+    // Disable caching so we'll always get the latest comments.
+    res.setHeader('Cache-Control', 'no-cache');
+    next();
+});
 
 function MyCSV(Fcol,Scol,tcol,fcol,ficol,scol,secol,ecol,ncol){
   this.Symbols=Fcol;
@@ -18,26 +32,41 @@ function MyCSV(Fcol,Scol,tcol,fcol,ficol,scol,secol,ecol,ncol){
   this.Mid=ncol;
   
 }
-
 var MyData=[];
-function fast_csv_read_url(url)
-{
-    // Let request return the document pointed to by the URL
-    // as a readable stream, and pass it to csv.fromStream()
-   // let currency_data=[][];
-    csv.fromStream(request(url))
-      .on("data", function(data){
-        //console.log("current data: ");
-        //console.log(data[0])
-        if(data[0]!=undefined){
-        MyData.push(new MyCSV(data[0], data[1], data[2]));
-        }
-        console.log(MyData);
-      })
-      .on("end", function(){
-        //console.log("done reading");
-      });
-      //console.log(data);
+//var MyData={"Name":"dipika"};
+app.get('/currency_data', function(req, res) {
+  console.log("REquest ali");
+ // Let request return the document pointed to by the URL
+    // as a readable stream, and pass it to csv.fromStream(
+request(URL, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+var temp=response.body;
+var inde=temp.split("\n");
+//console.log(inde.length);
+
+
+for(var index=0;index<inde.length;index++){
+//console.log(inde[index]);
+var temp1=inde[index].split(",");
+if(temp1[1]!=undefined){
+MyData.push(new MyCSV(temp1[0],temp1[1]));
+}
 }
 
-fast_csv_read_url(URL);
+//console.log(inde[10]
+  //MyData.push(new MyCSV())
+ // console.log(MyData);
+ var myJSON = JSON.stringify(MyData);
+ // console.log(myJSON);
+  res.json(myJSON);
+
+  }
+});
+
+
+  //console.log();
+  });
+
+app.listen(app.get('port'), function() {
+  console.log('Server started: http://localhost:' + app.get('port') + '/');
+});
