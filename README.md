@@ -36,7 +36,8 @@ Technologies Used:
       •	GitHub (to update the code)
       
 To run the Project:
-1.	Download the zip file, extract it.
+1.	Download the zip file, extract it. (Rename the file Because while install the node_modules it may giev you an error of Stack excced)
+
 2.	Open 2 command prompts
 
 In the first Command prompt
@@ -49,11 +50,7 @@ Don’t go to the browser we have to start the server to extract the data:
 
     a.	npm install fast-csv –-save 
     
-    b.      npm install request --save
-    
-    c.      npm install express --save
-    
-    d.	node server.js (the serve will be working on port 3001)
+    b.	node server.js (the serve will be working on port 3001)
     
 3.	Now go to the browser and you will the data with the increase and decrease and no change icons and also updating after every 20 secs
 
