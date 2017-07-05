@@ -9,16 +9,26 @@ Data:
 The data we are used is extracted from this site
 http://webrates.truefx.com/rates/connect.html?f=csv
       The data feed’s format is like so:
-        •	Currency – pair Symbol
-        •	Milliseconds timestamp
-        •	Bid Big Figure
-        •	Bid points
-        •	Offer big figure
-        •	Offer points 
-        •	High figure
-        •	Low figure
-        •	Mid figure
-      We are interested in only 3 values 1. Currency pair Symbol 2. Offer Big Figure 3. Offer points
+
+•	Currency – pair Symbol
+
+•	Milliseconds timestamp
+
+•	Bid Big Figure
+
+•	Bid points
+
+•	Offer big figure
+
+•	Offer points 
+
+•	High figure
+
+•	Low figure
+
+•	Mid figure
+
+We are interested in only 3 values 1. Currency pair Symbol 2. Offer Big Figure 3. Offer points
       
 Technologies Used:
       •	React
@@ -34,7 +44,7 @@ In the first Command prompt
     
     b.	npm start (this will do all the connection required the create Bundle.js file and automatically start the project on the browser)
     
-Don’t go to the browser we have to start the server to extract the data
+Don’t go to the browser we have to start the server to extract the data:
 
     a.	npm install fast-csv –save. 
     
