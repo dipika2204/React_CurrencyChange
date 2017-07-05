@@ -38,6 +38,7 @@ Technologies Used:
 To run the Project:
 1.	Download the zip file, extract it.
 2.	Open 2 command prompts
+
 In the first Command prompt
 
     a.	npm install (this will install dependencies required by the project)
