@@ -28,11 +28,20 @@ http://webrates.truefx.com/rates/connect.html?f=csv
 
 •	Mid figure
 
-We are interested in only 3 values 1. Currency pair Symbol 2. Offer Big Figure 3. Offer points
+We are interested in only 3 values:
+
+1. Currency pair Symbol 
+
+2. Offer Big Figure 
+
+3. Offer points
       
 Technologies Used:
+
       •	React
+      
       •	Node
+      
       •	GitHub (to update the code)
       
 To run the Project:
