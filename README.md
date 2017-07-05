@@ -1,10 +1,13 @@
 REACT CURRENCY CHANGE
 
 Description:
-            Create a webapp that displays a currency feed and updates itself every 20 secs. It should also indicate if the currency has increased or decreased since the last update.
+
+Create a webapp that displays a currency feed and updates itself every 20 secs. It should also indicate if the currency has increased or decreased since the last update.
             
 Data:
-    http://webrates.truefx.com/rates/connect.html?f=csv
+
+The data we are used is extracted from this site
+http://webrates.truefx.com/rates/connect.html?f=csv
       The data feed’s format is like so:
         •	Currency – pair Symbol
         •	Milliseconds timestamp
