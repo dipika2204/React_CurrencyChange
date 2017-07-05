@@ -36,7 +36,7 @@ In the first Command prompt
     
 Don’t go to the browser we have to start the server to extract the data
 
-    a.	npm install fast-csv –save
+    a.	npm install fast-csv –save. 
     
     b.	node server.js (the serve will be working on port 3001)
 3.	Now go to the browser and you will the data with the increase and decrease and no change icons and also updating after every 20 secs
