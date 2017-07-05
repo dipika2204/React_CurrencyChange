@@ -47,7 +47,7 @@ In the first Command prompt
     
 Don’t go to the browser we have to start the server to extract the data:
 
-    a.	npm install fast-csv –save. 
+    a.	npm install fast-csv –-save. 
     
     b.	node server.js (the serve will be working on port 3001)
     
