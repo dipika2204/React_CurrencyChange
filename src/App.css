@@ -1,14 +1,15 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
+   align: center;
   height: 150px;
   padding: 20px;
 }
 
-
-.App-intro {
-  font-size: large;
+.App-data{
+   width:100% ;
+   border-spacing: 14px;
+   text-align: center;
 }
+
 

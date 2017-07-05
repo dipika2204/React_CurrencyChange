@@ -52,7 +52,7 @@ for(var index=0;index<inde.length;index++){
 //console.log(inde[index]);
 var temp1=inde[index].split(",");
 if(temp1[1]!=undefined){
-MyData.push({"Symbols":temp1[0],"Timestamp_msec":temp1[1]});
+MyData.push({"Symbols":temp1[0],"Offer_big_figure":temp1[4],"Offer_big_points":temp1[5]});
 //console.log(MyData);
 }
 }
